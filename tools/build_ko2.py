@@ -6,7 +6,7 @@ XL 구조를 완전히 해독했으므로(tools/xl.py) 이제 문자열 영역�
 엔트리 offset 을 갱신한다. 제약은 개별 길이가 아니라 blob 당 문자열 영역 총량이다.
 blob 크기 자체는 그대로라 LINKDATA.idx 나 상위 컨테이너는 손대지 않는다.
 
-  python tools/build_ko2.py [번역json] [출력폴더]
+  python tools/build_ko2.py [출력폴더]   (옛 빌더. 지금은 build_verified.py 가 상수만 가져다 쓴다)
 """
 import sys, os, io, json, shutil, struct, pickle, bisect
 sys.path.insert(0, os.path.dirname(__file__))
@@ -127,6 +127,6 @@ def build(ko, outdir, verbose=True):
 
 
 if __name__ == '__main__':
-    kop = sys.argv[1] if len(sys.argv) > 1 else 'translation/ko.json'
-    out = sys.argv[2] if len(sys.argv) > 2 else 'out'
-    build(json.load(io.open(kop, encoding='utf-8')), out)
+    import tl
+    out = sys.argv[1] if len(sys.argv) > 1 else 'out'
+    build(tl.load_ko(), out)

@@ -14,7 +14,8 @@ def main():
     out = Path('extract/dialogue_v2')
     out.mkdir(parents=True, exist_ok=True)
     meta = pickle.loads(Path('extract/meta.pkl').read_bytes())
-    ko = json.loads(Path('translation/ko.json').read_text(encoding='utf-8'))
+    import tl
+    ko = tl.load_ko()
     archives = [('base', Path('extract/base/LINKDATA.idx')),
                 ('update', Path('extract/update/LINKDATA.idx'))]
     archives += [(p.stem.split('_')[0], p) for p in sorted(Path('extract/dlc').glob('*_LINKDATA.idx'))]
