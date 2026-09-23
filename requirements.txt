@@ -1,0 +1,5 @@
+pyctr>=0.7
+Pillow>=10
+numpy>=1.24
+keystone-engine>=0.9
+unicorn>=2.0

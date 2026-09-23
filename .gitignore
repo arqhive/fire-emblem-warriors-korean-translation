@@ -1,0 +1,36 @@
+# 게임 데이터 (저작권 — 커밋하지 않음)
+*.cia
+*.cxi
+*.3ds
+*.app
+extract/
+emu/
+
+# 복호화 키 (절대 커밋하지 않음)
+seeddb.bin
+boot9.bin
+
+# 원문·게임 그래픽이 든 작업 산출물 (커밋하지 않음)
+work/
+reports/
+translation/graphics/
+translation/home_menu/
+MEMORY.md
+
+# 폰트 (라이선스 파일과 함께 따로 받음 — README 참고)
+tools/fonts/
+
+# 외부 도구 (README 참고)
+tools/bin/
+
+# 배포 패처에 꾸리는 것 (빌드 때 채운다 — make_payload.py, make_patcher.py)
+release/patcher/lib/
+release/patcher/bin/
+release/patcher/payload/
+release/python/
+release/*.zip
+release/work/
+
+__pycache__/
+*.pyc
+*.tmp

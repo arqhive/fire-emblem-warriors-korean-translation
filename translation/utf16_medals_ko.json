@@ -1,0 +1,1502 @@
+{
+ "resource_path": "2/0/7",
+ "encoding": "utf-16-le",
+ "records": [
+  {
+   "translation": "일기당천",
+   "existing_translation": "일기당천",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 0,
+     "offset": 420
+    },
+    {
+     "tag": "update",
+     "index": 0,
+     "offset": 420
+    }
+   ]
+  },
+  {
+   "translation": "영웅백가",
+   "existing_translation": "영웅백가",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 1,
+     "offset": 432
+    },
+    {
+     "tag": "update",
+     "index": 1,
+     "offset": 432
+    }
+   ]
+  },
+  {
+   "translation": "각성한 힘",
+   "existing_translation": "각성한 힘",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 2,
+     "offset": 444
+    },
+    {
+     "tag": "update",
+     "index": 2,
+     "offset": 444
+    }
+   ]
+  },
+  {
+   "translation": "전투왕",
+   "existing_translation": "전투왕",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 3,
+     "offset": 458
+    },
+    {
+     "tag": "update",
+     "index": 3,
+     "offset": 458
+    }
+   ]
+  },
+  {
+   "translation": "금과 은",
+   "existing_translation": "금과은",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 4,
+     "offset": 468
+    },
+    {
+     "tag": "update",
+     "index": 4,
+     "offset": 468
+    }
+   ]
+  },
+  {
+   "translation": "무기 마니아",
+   "existing_translation": "무기마니아",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 5,
+     "offset": 478
+    },
+    {
+     "tag": "update",
+     "index": 5,
+     "offset": 478
+    }
+   ]
+  },
+  {
+   "translation": "횡재",
+   "existing_translation": "횡재",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 6,
+     "offset": 492
+    },
+    {
+     "tag": "update",
+     "index": 6,
+     "offset": 492
+    }
+   ]
+  },
+  {
+   "translation": "호인",
+   "existing_translation": "호인",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 7,
+     "offset": 506
+    },
+    {
+     "tag": "update",
+     "index": 7,
+     "offset": 506
+    }
+   ]
+  },
+  {
+   "translation": "절약 고수",
+   "existing_translation": "절약고수",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 8,
+     "offset": 518
+    },
+    {
+     "tag": "update",
+     "index": 8,
+     "offset": 518
+    }
+   ]
+  },
+  {
+   "translation": "비전서",
+   "existing_translation": "비전서",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 9,
+     "offset": 530
+    },
+    {
+     "tag": "update",
+     "index": 9,
+     "offset": 530
+    }
+   ]
+  },
+  {
+   "translation": "필사",
+   "existing_translation": "필사",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 10,
+     "offset": 542
+    },
+    {
+     "tag": "update",
+     "index": 10,
+     "offset": 542
+    }
+   ]
+  },
+  {
+   "translation": "하늘의 기사",
+   "existing_translation": "하늘의 기사",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 11,
+     "offset": 552
+    },
+    {
+     "tag": "update",
+     "index": 11,
+     "offset": 552
+    }
+   ]
+  },
+  {
+   "translation": "이인삼각",
+   "existing_translation": "이인삼각",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 12,
+     "offset": 568
+    },
+    {
+     "tag": "update",
+     "index": 12,
+     "offset": 568
+    }
+   ]
+  },
+  {
+   "translation": "쌍둥이 영웅",
+   "existing_translation": "쌍둥이영웅",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 13,
+     "offset": 580
+    },
+    {
+     "tag": "update",
+     "index": 13,
+     "offset": 580
+    }
+   ]
+  },
+  {
+   "translation": "최강자의 이름",
+   "existing_translation": "최강자의 이름",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 14,
+     "offset": 594
+    },
+    {
+     "tag": "update",
+     "index": 14,
+     "offset": 594
+    }
+   ]
+  },
+  {
+   "translation": "회화 컬렉터",
+   "existing_translation": "회화 컬렉터",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 15,
+     "offset": 612
+    },
+    {
+     "tag": "update",
+     "index": 15,
+     "offset": 612
+    }
+   ]
+  },
+  {
+   "translation": "수송대의 천적",
+   "existing_translation": "수송대 천적",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 16,
+     "offset": 630
+    },
+    {
+     "tag": "update",
+     "index": 16,
+     "offset": 630
+    }
+   ]
+  },
+  {
+   "translation": "왕국의 수호자",
+   "existing_translation": "왕국수호자",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 17,
+     "offset": 646
+    },
+    {
+     "tag": "update",
+     "index": 17,
+     "offset": 646
+    }
+   ]
+  },
+  {
+   "translation": "설득의 달인",
+   "existing_translation": "설득달인",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 18,
+     "offset": 662
+    },
+    {
+     "tag": "update",
+     "index": 18,
+     "offset": 662
+    }
+   ]
+  },
+  {
+   "translation": "최고의 동료들",
+   "existing_translation": "최고의 동료들",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 19,
+     "offset": 676
+    },
+    {
+     "tag": "update",
+     "index": 19,
+     "offset": 676
+    }
+   ]
+  },
+  {
+   "translation": "경건한 신도",
+   "existing_translation": "경건한신도",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 20,
+     "offset": 694
+    },
+    {
+     "tag": "update",
+     "index": 20,
+     "offset": 694
+    }
+   ]
+  },
+  {
+   "translation": "각성과의 해후",
+   "existing_translation": "각성과의해후",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 21,
+     "offset": 708
+    },
+    {
+     "tag": "update",
+     "index": 21,
+     "offset": 708
+    }
+   ]
+  },
+  {
+   "translation": "안나의 선물",
+   "existing_translation": "안나 선물",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 22,
+     "offset": 724
+    },
+    {
+     "tag": "update",
+     "index": 22,
+     "offset": 724
+    }
+   ]
+  },
+  {
+   "translation": "페가수스 세 자매",
+   "existing_translation": "페가수스삼자매",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 23,
+     "offset": 742
+    },
+    {
+     "tag": "update",
+     "index": 23,
+     "offset": 742
+    }
+   ]
+  },
+  {
+   "translation": "영웅들의 궤적",
+   "existing_translation": "영웅들의 궤적",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 24,
+     "offset": 760
+    },
+    {
+     "tag": "update",
+     "index": 24,
+     "offset": 760
+    }
+   ]
+  },
+  {
+   "translation": "연대기의 패자",
+   "existing_translation": "연대기 패자",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 25,
+     "offset": 778
+    },
+    {
+     "tag": "update",
+     "index": 25,
+     "offset": 778
+    }
+   ]
+  },
+  {
+   "translation": "숨겨진 역사",
+   "existing_translation": "숨겨진 사실",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 26,
+     "offset": 794
+    },
+    {
+     "tag": "update",
+     "index": 26,
+     "offset": 794
+    }
+   ]
+  },
+  {
+   "translation": "풋내기 전사",
+   "existing_translation": "풋내기 전사",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 27,
+     "offset": 810
+    },
+    {
+     "tag": "update",
+     "index": 27,
+     "offset": 810
+    }
+   ]
+  },
+  {
+   "translation": "문장의 기억",
+   "existing_translation": "문장기억",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 28,
+     "offset": 826
+    },
+    {
+     "tag": "update",
+     "index": 28,
+     "offset": 826
+    }
+   ]
+  },
+  {
+   "translation": "진정한 영웅",
+   "existing_translation": "진짜영웅",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 29,
+     "offset": 840
+    },
+    {
+     "tag": "update",
+     "index": 29,
+     "offset": 840
+    }
+   ]
+  },
+  {
+   "translation": "시련을 넘어",
+   "existing_translation": "시련을 넘어",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 30,
+     "offset": 852
+    },
+    {
+     "tag": "update",
+     "index": 30,
+     "offset": 852
+    }
+   ]
+  },
+  {
+   "translation": "수집벽",
+   "existing_translation": "수집벽",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 31,
+     "offset": 868
+    },
+    {
+     "tag": "update",
+     "index": 31,
+     "offset": 868
+    }
+   ]
+  },
+  {
+   "translation": "유대의 증표",
+   "existing_translation": "유대의 증표",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 32,
+     "offset": 878
+    },
+    {
+     "tag": "update",
+     "index": 32,
+     "offset": 878
+    }
+   ]
+  },
+  {
+   "translation": "운명인가, 유대인가",
+   "existing_translation": "운명과 유대",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 33,
+     "offset": 888
+    },
+    {
+     "tag": "update",
+     "index": 33,
+     "offset": 888
+    }
+   ]
+  },
+  {
+   "translation": "그 손이 여는 미래",
+   "existing_translation": "그 손이 열 미래",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 34,
+     "offset": 904
+    },
+    {
+     "tag": "update",
+     "index": 34,
+     "offset": 904
+    }
+   ]
+  },
+  {
+   "translation": "악의 사제 가네프",
+   "existing_translation": "악의 사제 가네프",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 35,
+     "offset": 924
+    },
+    {
+     "tag": "update",
+     "index": 35,
+     "offset": 924
+    }
+   ]
+  },
+  {
+   "translation": "키아란의 공녀",
+   "existing_translation": "키아란의 공녀",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 36,
+     "offset": 944
+    },
+    {
+     "tag": "update",
+     "index": 36,
+     "offset": 944
+    }
+   ]
+  },
+  {
+   "translation": "재회, 그리고……",
+   "existing_translation": "재회　그리고・・・",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 37,
+     "offset": 962
+    }
+   ]
+  },
+  {
+   "translation": "한 번의 전투에서\n적 1000명 이상을 격파했다.",
+   "existing_translation": "한 번의 전투에서\n적 １０００체 이상을 격파했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 50,
+     "offset": 1034
+    },
+    {
+     "tag": "update",
+     "index": 50,
+     "offset": 1172
+    }
+   ]
+  },
+  {
+   "translation": "무쌍오의로\n한 번에 적 100명 이상을 격파했다.",
+   "existing_translation": "무쌍 오의로\n한 번에 적 １００체 이상을 격파했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 51,
+     "offset": 1082
+    },
+    {
+     "tag": "update",
+     "index": 51,
+     "offset": 1220
+    }
+   ]
+  },
+  {
+   "translation": "각성으로\n한 번에 적 500명 이상을 격파했다.",
+   "existing_translation": "각성으로\n한 번에 적 ５００체 이상을 격파했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 52,
+     "offset": 1130
+    },
+    {
+     "tag": "update",
+     "index": 52,
+     "offset": 1268
+    }
+   ]
+  },
+  {
+   "translation": "누적\n적 100000명 이상을 격파했다.",
+   "existing_translation": "누적\n적 １０００００체 이상 격파했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 53,
+     "offset": 1174
+    },
+    {
+     "tag": "update",
+     "index": 53,
+     "offset": 1312
+    }
+   ]
+  },
+  {
+   "translation": "누적\n1000000G 이상을 획득했다.",
+   "existing_translation": "누적\n１００００００Ｇ 이상 획득했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 54,
+     "offset": 1218
+    },
+    {
+     "tag": "update",
+     "index": 54,
+     "offset": 1356
+    }
+   ]
+  },
+  {
+   "translation": "누적\n무기 1000개 이상을 획득했다.",
+   "existing_translation": "누적\n무기 １０００개 이상 획득했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 55,
+     "offset": 1260
+    },
+    {
+     "tag": "update",
+     "index": 55,
+     "offset": 1398
+    }
+   ]
+  },
+  {
+   "translation": "누적\n레어 소재 100개 이상을 획득했다.",
+   "existing_translation": "누적\n레어 소재 １００개 이상 획득했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 56,
+     "offset": 1302
+    },
+    {
+     "tag": "update",
+     "index": 56,
+     "offset": 1440
+    }
+   ]
+  },
+  {
+   "translation": "누적\n아군을 100회 이상 회복했다.",
+   "existing_translation": "누적으로\n아군을 １００회 이상 회복했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 57,
+     "offset": 1346
+    },
+    {
+     "tag": "update",
+     "index": 57,
+     "offset": 1484
+    }
+   ]
+  },
+  {
+   "translation": "한 번에 아군 3명 이상을 회복했다.",
+   "existing_translation": "한 번에 아군 3명 이상을 회복했다.",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 58,
+     "offset": 1384
+    },
+    {
+     "tag": "update",
+     "index": 58,
+     "offset": 1522
+    }
+   ]
+  },
+  {
+   "translation": "필살 일격과 연격을 500회 사용했다.",
+   "existing_translation": "필살 일격과 연격을 500회 사용했다.",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 59,
+     "offset": 1418
+    },
+    {
+     "tag": "update",
+     "index": 59,
+     "offset": 1556
+    }
+   ]
+  },
+  {
+   "translation": "자신에게 특효를 가진 적을\n누적 10명 이상 격파했다.",
+   "existing_translation": "자신에게 특효를 가진 적을\n누적 １０체 이상 격파했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 60,
+     "offset": 1454
+    },
+    {
+     "tag": "update",
+     "index": 60,
+     "offset": 1592
+    }
+   ]
+  },
+  {
+   "translation": "비행 캐릭터로 누적\n10km 이상 대시했다.",
+   "existing_translation": "비행 캐릭터로 누적\n１０ｋｍ 이상 대시했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 61,
+     "offset": 1510
+    },
+    {
+     "tag": "update",
+     "index": 61,
+     "offset": 1648
+    }
+   ]
+  },
+  {
+   "translation": "더블 상태로 누적\n20km 이상 대시했다.",
+   "existing_translation": "더블 상태로 누적\n２０ｋｍ 이상 대시했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 62,
+     "offset": 1562
+    },
+    {
+     "tag": "update",
+     "index": 62,
+     "offset": 1700
+    }
+   ]
+  },
+  {
+   "translation": "스토리 모드를 클리어했다.",
+   "existing_translation": "스토리 모드를 클리어했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 63,
+     "offset": 1608
+    },
+    {
+     "tag": "update",
+     "index": 63,
+     "offset": 1746
+    }
+   ]
+  },
+  {
+   "translation": "스토리 모드의 모든 시나리오를\n루나틱 난이도로 클리어했다.",
+   "existing_translation": "스토리 모드의 모든 시나리오를\n루나틱 난이도로 클리어했다.",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 64,
+     "offset": 1640
+    },
+    {
+     "tag": "update",
+     "index": 64,
+     "offset": 1778
+    }
+   ]
+  },
+  {
+   "translation": "모든 일러스트를 완성했다.",
+   "existing_translation": "모든 일러스트를 완성했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 65,
+     "offset": 1706
+    },
+    {
+     "tag": "update",
+     "index": 65,
+     "offset": 1844
+    }
+   ]
+  },
+  {
+   "translation": "1종류의 소재를\n소지 가능한 최대 수까지 모았다.",
+   "existing_translation": "한 종류의 소재를\n소지 가능한 최대 수까지 모았다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 66,
+     "offset": 1738
+    },
+    {
+     "tag": "update",
+     "index": 66,
+     "offset": 1876
+    }
+   ]
+  },
+  {
+   "translation": "주인공 2명의 레벨을\n99까지 올렸다.",
+   "existing_translation": "주인공 ２명의 레벨을\n９９까지 올렸다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 67,
+     "offset": 1782
+    },
+    {
+     "tag": "update",
+     "index": 67,
+     "offset": 1920
+    }
+   ]
+  },
+  {
+   "translation": "모든 캐릭터를 동료로 삼았다.",
+   "existing_translation": "모든 캐릭터를 동료로 삼았다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 68,
+     "offset": 1822
+    },
+    {
+     "tag": "update",
+     "index": 68,
+     "offset": 1960
+    }
+   ]
+  },
+  {
+   "translation": "모든 캐릭터 사이의\n유대 레벨이 A 이상이 되었다.",
+   "existing_translation": "모든 캐릭터끼리\n유대 레벨이 Ａ 이상이 되었다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 69,
+     "offset": 1858
+    },
+    {
+     "tag": "update",
+     "index": 69,
+     "offset": 1996
+    }
+   ]
+  },
+  {
+   "translation": "모든 종류의 축복을 받았다.",
+   "existing_translation": "모든 종류 축복을 받았다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 70,
+     "offset": 1914
+    },
+    {
+     "tag": "update",
+     "index": 70,
+     "offset": 2052
+    }
+   ]
+  },
+  {
+   "translation": "각성 보너스를 모두 발동했다.",
+   "existing_translation": "각성 보너스를 모두 발동했다.",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 71,
+     "offset": 1944
+    },
+    {
+     "tag": "update",
+     "index": 71,
+     "offset": 2082
+    }
+   ]
+  },
+  {
+   "translation": "amiibo 선물을\n100회 받았다.",
+   "existing_translation": "ａｍｉｉｂｏ 선물을\n１００회 받았다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 72,
+     "offset": 1980
+    },
+    {
+     "tag": "update",
+     "index": 72,
+     "offset": 2118
+    }
+   ]
+  },
+  {
+   "translation": "트라이앵글 어택을 발동했다.",
+   "existing_translation": "트라이앵글 어택을 발동했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 73,
+     "offset": 2026
+    },
+    {
+     "tag": "update",
+     "index": 73,
+     "offset": 2164
+    }
+   ]
+  },
+  {
+   "translation": "히스토리 모드의 모든 전투를\n클리어했다.",
+   "existing_translation": "히스토리 모드의 모든 전투를\n클리어했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 74,
+     "offset": 2062
+    },
+    {
+     "tag": "update",
+     "index": 74,
+     "offset": 2200
+    }
+   ]
+  },
+  {
+   "translation": "히스토리 모드의 모든 전투를\nS랭크로 클리어했다.",
+   "existing_translation": "히스토리 모드 전 전투를\nＳ랭크로 클리어했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 75,
+     "offset": 2106
+    },
+    {
+     "tag": "update",
+     "index": 75,
+     "offset": 2244
+    }
+   ]
+  },
+  {
+   "translation": "히스토리 모드의 숨겨진 요소를\n모두 찾아냈다.",
+   "existing_translation": "히스토리 모드의 숨겨진 요소를\n전부 찾아냈다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 76,
+     "offset": 2160
+    },
+    {
+     "tag": "update",
+     "index": 76,
+     "offset": 2298
+    }
+   ]
+  },
+  {
+   "translation": "히스토리 모드에서\nS랭크를 획득했다.",
+   "existing_translation": "히스토리 모드에서\nＳ랭크를 획득했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 77,
+     "offset": 2208
+    },
+    {
+     "tag": "update",
+     "index": 77,
+     "offset": 2346
+    }
+   ]
+  },
+  {
+   "translation": "모든 종류의 문장을 만들었다.",
+   "existing_translation": "모든 종류 문장을 만들었다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 78,
+     "offset": 2250
+    },
+    {
+     "tag": "update",
+     "index": 78,
+     "offset": 2388
+    }
+   ]
+  },
+  {
+   "translation": "모든 훈장을 획득했다.",
+   "existing_translation": "모든 훈장을 획득했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 79,
+     "offset": 2280
+    },
+    {
+     "tag": "update",
+     "index": 79,
+     "offset": 2418
+    }
+   ]
+  },
+  {
+   "translation": "스토리 모드의 모든 시나리오를\n하드 난이도로 클리어했다.",
+   "existing_translation": "스토리 모드 전 시나리오를\n난이도 하드로 클리어했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 80,
+     "offset": 2306
+    },
+    {
+     "tag": "update",
+     "index": 80,
+     "offset": 2444
+    }
+   ]
+  },
+  {
+   "translation": "일러스트를 하나 완성했다.",
+   "existing_translation": "일러스트를 하나 완성했다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 81,
+     "offset": 2366
+    },
+    {
+     "tag": "update",
+     "index": 81,
+     "offset": 2504
+    }
+   ]
+  },
+  {
+   "translation": "한 쌍의 캐릭터 사이의\n유대 레벨이 A 이상이 되었다.",
+   "existing_translation": "한 쌍의 캐릭터끼리\n유대 레벨이 Ａ 이상이 되었다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 82,
+     "offset": 2396
+    },
+    {
+     "tag": "update",
+     "index": 82,
+     "offset": 2534
+    }
+   ]
+  },
+  {
+   "translation": "히스토리 맵을 하나\n클리어했다.",
+   "existing_translation": "히스토리 맵을 하나\n클리어했다.",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "base",
+     "index": 83,
+     "offset": 2450
+    },
+    {
+     "tag": "base",
+     "index": 84,
+     "offset": 2490
+    },
+    {
+     "tag": "base",
+     "index": 85,
+     "offset": 2530
+    },
+    {
+     "tag": "base",
+     "index": 86,
+     "offset": 2570
+    },
+    {
+     "tag": "base",
+     "index": 87,
+     "offset": 2610
+    },
+    {
+     "tag": "update",
+     "index": 83,
+     "offset": 2588
+    },
+    {
+     "tag": "update",
+     "index": 84,
+     "offset": 2628
+    },
+    {
+     "tag": "update",
+     "index": 85,
+     "offset": 2668
+    },
+    {
+     "tag": "update",
+     "index": 86,
+     "offset": 2708
+    },
+    {
+     "tag": "update",
+     "index": 87,
+     "offset": 2748
+    },
+    {
+     "tag": "update",
+     "index": 88,
+     "offset": 2788
+    },
+    {
+     "tag": "update",
+     "index": 89,
+     "offset": 2828
+    },
+    {
+     "tag": "update",
+     "index": 90,
+     "offset": 2868
+    },
+    {
+     "tag": "update",
+     "index": 91,
+     "offset": 2908
+    },
+    {
+     "tag": "update",
+     "index": 92,
+     "offset": 2948
+    },
+    {
+     "tag": "update",
+     "index": 93,
+     "offset": 2988
+    },
+    {
+     "tag": "update",
+     "index": 94,
+     "offset": 3028
+    },
+    {
+     "tag": "update",
+     "index": 95,
+     "offset": 3068
+    },
+    {
+     "tag": "update",
+     "index": 96,
+     "offset": 3108
+    }
+   ]
+  },
+  {
+   "translation": "재회, 그리고……",
+   "existing_translation": "재회　그리고・・・",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 37,
+     "offset": 962
+    }
+   ]
+  },
+  {
+   "translation": "비탄의 짐승",
+   "existing_translation": "비탄의수",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 38,
+     "offset": 984
+    }
+   ]
+  },
+  {
+   "translation": "신들이 머무는 나라",
+   "existing_translation": "신들의 나라",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 39,
+     "offset": 996
+    }
+   ]
+  },
+  {
+   "translation": "얼음 마을",
+   "existing_translation": "얼음촌",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 40,
+     "offset": 1012
+    }
+   ]
+  },
+  {
+   "translation": "데블 마운틴",
+   "existing_translation": "데블 마운틴",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 41,
+     "offset": 1022
+    }
+   ]
+  },
+  {
+   "translation": "프린세스 미네르바",
+   "existing_translation": "프린세스・미네르바",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 42,
+     "offset": 1042
+    }
+   ]
+  },
+  {
+   "translation": "노르다 시장",
+   "existing_translation": "노르다 시장",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 43,
+     "offset": 1066
+    }
+   ]
+  },
+  {
+   "translation": "전설의 계승자",
+   "existing_translation": "전설의계승자",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 44,
+     "offset": 1082
+    }
+   ]
+  },
+  {
+   "translation": "성왕 에메리나",
+   "existing_translation": "성왕 에메리나",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 45,
+     "offset": 1098
+    }
+   ]
+  },
+  {
+   "translation": "캐러밴의 무희",
+   "existing_translation": "캐러밴 무희",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 46,
+     "offset": 1114
+    }
+   ]
+  },
+  {
+   "translation": "한계 돌파",
+   "existing_translation": "한계 돌파",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 47,
+     "offset": 1136
+    }
+   ]
+  },
+  {
+   "translation": "극한 돌파",
+   "existing_translation": "극한 돌파",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 48,
+     "offset": 1148
+    }
+   ]
+  },
+  {
+   "translation": "궁극 돌파",
+   "existing_translation": "궁극 돌파",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 49,
+     "offset": 1160
+    }
+   ]
+  },
+  {
+   "translation": "레벨을 110까지 올렸다.",
+   "existing_translation": "레벨을 １１０까지 올렸다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 97,
+     "offset": 3148
+    }
+   ]
+  },
+  {
+   "translation": "레벨을 130까지 올렸다.",
+   "existing_translation": "레벨을 １３０까지 올렸다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 98,
+     "offset": 3176
+    }
+   ]
+  },
+  {
+   "translation": "레벨을 150까지 올렸다.",
+   "existing_translation": "레벨을 １５０까지 올렸다",
+   "reviewed": true,
+   "locations": [
+    {
+     "tag": "update",
+     "index": 99,
+     "offset": 3204
+    }
+   ]
+  }
+ ]
+}
