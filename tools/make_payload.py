@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 """배포용 패치 데이터(payload)를 만든다.
 
-  python tools/make_payload.py
+  python tools/make_payload.py [버전]      # 기본 VERSION
 
 원본 CIA 와 한글 CIA 에서 콘텐츠별 romfs 를 뽑아 xdelta 차분을 만든다.
 romfs 단위로 뜨면 movie·sound·voice 2.2GB 가 그대로 재사용돼 차분이 작고,
@@ -33,6 +33,7 @@ from hangul_font import make_patch
 
 DESK = Path(os.path.expandvars(r'%USERPROFILE%\Desktop'))
 XDELTA = HERE / 'bin' / 'xdelta3.exe'
+VERSION = 'v0.2'
 OUT = ROOT / 'release' / 'patcher' / 'payload'
 TMP = ROOT / 'work' / 'payload_tmp'
 
@@ -66,7 +67,8 @@ def dump_romfs(cia, index, dst):
 def main():
     OUT.mkdir(parents=True, exist_ok=True)
     TMP.mkdir(parents=True, exist_ok=True)
-    manifest = {'version': 'v0.1', 'titles': {}}
+    version = sys.argv[1] if len(sys.argv) > 1 else VERSION
+    manifest = {'version': version, 'titles': {}}
 
     for tag, pattern, built, indexes in JOBS:
         orig = glob.glob(pattern)

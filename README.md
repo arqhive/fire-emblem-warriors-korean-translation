@@ -3,7 +3,7 @@
 *Fire Emblem Warriors* (닌텐도 3DS, 일본판 `KTR-P-CFMJ` / `000400000F70C100`) 비공식 한국어 팬 패치입니다.
 대사는 일본어판 원문을 기준으로 번역했습니다.
 
-**제작: arqhive** · **최신 버전: [v0.1](../../releases/tag/v0.1)**
+**제작: arqhive** · **최신 버전: [v0.2](../../releases/tag/v0.2)**
 
 - 메뉴, 무기·특성 설명, 전투 로그, 미션 조건, 히스토리 모드, 용어·인명 등 캐시 원문 13,328개를 번역했습니다.
 - 본편과 업데이트의 순차 대사 9,950참조, 추가 콘텐츠(DLC)의 순차 대사 3,014참조를 번역했습니다.
@@ -35,7 +35,7 @@
 
 ### 적용 방법
 
-1. [배포 페이지](../../releases/latest)에서 `FEWarriors_KO_v0.1_Patcher.zip`을 받아 폴더째 풉니다.
+1. [배포 페이지](../../releases/latest)에서 `FEWarriors_KO_v0.2_Patcher.zip`을 받아 폴더째 풉니다.
 2. 일본판 CIA를 `패치하기.bat`에 끌어다 놓습니다. 여러 개를 한 번에 놓아도 되고,
    타이틀 ID를 보고 본편·업데이트·DLC를 알아서 구분합니다.
 3. 원본과 같은 폴더에 `<원래 이름>_KO.cia`가 생깁니다. 원본 파일은 바뀌지 않습니다.
@@ -52,12 +52,12 @@
 패처가 만드는 CIA는 설치 티켓에 무작위 키가 들어가 파일 전체 해시가 매번 달라집니다.
 그래서 패치가 바꾸는 아카이브의 값을 적습니다. 패처는 원본과 결과를 이 값으로 스스로 검사합니다.
 
-| 항목 | 원본 본편 | 한글 본편 (v0.1) | 원본 업데이트 | 한글 업데이트 (v0.1) |
+| 항목 | 원본 본편 | 한글 본편 (v0.2) | 원본 업데이트 | 한글 업데이트 (v0.2) |
 |---|---|---|---|---|
 | 크기 | 1,392,747,100 바이트 | 1,397,029,264 바이트 | 111,236,698 바이트 | 115,879,796 바이트 |
-| CRC32 | `D7F0AD48` | `8132FE6E` | `D1479A11` | `57C7E7B3` |
-| MD5 | `fab421456583c8243a012ed62522e681` | `d61b0c183be3447f67ebc3ec521ef5b7` | `bdf1b153bc42f28e4d253fbadd8e9bcf` | `6bf67fa2b045937ec049aeb0645d575e` |
-| SHA-1 | `7797fa6d5f08aa2d0f21e8e622f0ba2b4af492bd` | `8ae61dd40ce829cf2c3e106fa8e62e464f3e1d42` | `2401688fd150d550409aace9be6110b94f12fa57` | `00ae31379aa8252c94062b79c3defd48a5f0ec81` |
+| CRC32 | `D7F0AD48` | `42BF6F7B` | `D1479A11` | `03F42CE3` |
+| MD5 | `fab421456583c8243a012ed62522e681` | `fa5f9bf6159b791cfea2bcb7efd4f43a` | `bdf1b153bc42f28e4d253fbadd8e9bcf` | `d1c5dcfb06810a2643866d3c9fac0c9e` |
+| SHA-1 | `7797fa6d5f08aa2d0f21e8e622f0ba2b4af492bd` | `0e60bf97ff2e9a83c07f9d1eff3946ea2a0984fe` | `2401688fd150d550409aace9be6110b94f12fa57` | `25747b7d6b2ceebec3ed253c736e3817f166f485` |
 
 원본 파일 위치: 각 타이틀 romfs의 `LINKDATA.bin`.
 
@@ -92,7 +92,7 @@
 ```bash
 python tools/build_all.py                                            # 번역 → 한글판 CIA 세 개 → 배포 차분
 python tools/make_patcher.py --python <임베디드 파이썬 zip 또는 폴더>   # release/patcher 의 lib·bin, release/python
-python tools/make_release.py v0.1                                    # release/FEWarriors_KO_v0.1_Patcher.zip
+python tools/make_release.py v0.2                                    # release/FEWarriors_KO_v0.2_Patcher.zip
 ```
 
 `build_all.py`는 아래 순서를 한 번에 돌립니다.

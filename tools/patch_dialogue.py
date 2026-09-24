@@ -10,7 +10,7 @@ import struct
 from pathlib import Path
 
 import ctrl
-from dialogue_records import parse
+from dialogue_records import parse, stored_length
 from kopatch import encode_ko, lint
 from linkdata import LinkData, is_container
 import tl
@@ -66,7 +66,8 @@ def rebuild_records(blob, edits, codes):
             raw = expected[-1][2]
         if b'\0' in raw:
             raise ValueError('Embedded NUL in dialogue')
-        stored = 2 * len(raw.decode('cp932')) + 1
+        raw.decode('cp932')
+        stored = stored_length(raw)
         if stored > 65535:
             raise ValueError('Dialogue length exceeds u16')
         header = bytearray(blob[row['header_offset']:row['offset']])
