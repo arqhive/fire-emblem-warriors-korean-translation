@@ -101,6 +101,8 @@ def main():
     ap.add_argument('--code', action='store_true',
                     help='한글 코드 매핑 훅을 ExeFS 의 .code 에 넣는다(LayeredFS code.ips 대신)')
     ap.add_argument('--keep', action='store_true', help='작업 폴더를 지우지 않는다')
+    ap.add_argument('--manual', default=None,
+                    help='본편 content 1(전자 설명서) romfs 의 Manual.bcma 를 이 파일로 갈아 끼운다')
     a = ap.parse_args()
     np_ = os.path.normpath
     tool = lambda n: np_(os.path.join(a.tools, n + ('.exe' if os.name == 'nt' else '')))
@@ -186,13 +188,35 @@ def main():
             L('cromfs'))
         shutil.rmtree(rdir, ignore_errors=True)
 
+    # 3-2) 전자 설명서(content 1, CFA) 의 Manual.bcma 교체
+    manual_ncch = None
+    if a.manual:
+        if a.tag != 'base':
+            raise SystemExit('--manual 은 본편에만 쓴다')
+        n = P('c1.ncch')
+        run([tool('3dstool'), '-xvtf', 'cfa', n, '--header', P('c1_header.bin'), '--romfs', P('c1_romfs.bin')], L('x_cfa1'))
+        rdir = P('c1_romfs')
+        run([tool('3dstool'), '-xvtf', 'romfs', P('c1_romfs.bin'), '--romfs-dir', rdir], L('x_romfs1'))
+        target = os.path.join(rdir, 'Manual.bcma')
+        if not os.path.exists(target):
+            raise SystemExit('content 1 romfs 에 Manual.bcma 가 없다')
+        before = os.path.getsize(target)
+        shutil.copyfile(a.manual, target)
+        print('   Manual.bcma  %s → %s 바이트' % (format(before, ','), format(os.path.getsize(target), ',')))
+        run([tool('3dstool'), '-cvtf', 'romfs', P('c1_romfs_ko.bin'), '--romfs-dir', rdir], L('c_romfs1'))
+        manual_ncch = P('c1_ko.ncch')
+        # --not-encrypt 를 빠뜨리면 원본 헤더의 '암호화됨' 플래그가 남는다(DLC 때 겪음)
+        run([tool('3dstool'), '-cvtf', 'cfa', manual_ncch, '--header', P('c1_header.bin'),
+             '--romfs', P('c1_romfs_ko.bin'), '--not-encrypt'], L('c_cfa1'))
+        shutil.rmtree(rdir, ignore_errors=True)
+
     # 4) CXI 다시 싸기 → CIA 묶기
     print('CXI 재빌드 (--not-encrypt)', flush=True)
     run([tool('3dstool'), '-cvtf', 'cxi', P('ko.cxi')] + parts + ['--not-encrypt'], L('ccxi'))
     print('CIA 묶기 (makerom -ignoresign)')
     cmd = [tool('makerom'), '-f', 'cia', '-o', np_(a.out), '-ignoresign']
     for idx, cid in recs:
-        cmd += ['-content', '%s:%d:%d' % (P('ko.cxi') if idx == 0 else P('c%d.ncch' % idx),
+        cmd += ['-content', '%s:%d:%d' % (P('ko.cxi') if idx == 0 else (manual_ncch if idx == 1 and manual_ncch else P('c%d.ncch' % idx)),
                                           idx, int(cid, 16))]
     run(cmd, L('makerom'))
 

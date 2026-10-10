@@ -3,7 +3,7 @@
 
 타이틀 ID 로 본편·업데이트·추가 콘텐츠를 가른다.
 
-  본편      000400000f70c100  content 0 : romfs 차분 + .code 훅 + 배너·아이콘, content 1(설명서)는 그대로
+  본편      000400000f70c100  content 0 : romfs 차분 + .code 훅 + 배너·아이콘, content 1(전자 설명서) : romfs 차분
   업데이트  0004000e0f70c100  content 0 : romfs 차분 + .code 훅 + 아이콘
   DLC       0004008c0f70c100  content 2·3·4 : romfs 차분, 나머지는 그대로
 
@@ -360,27 +360,32 @@ def _patch(src, dst, payload, bindir, work, key_extra):
         apply_romfs(T, W, payload, spec['contents']['0'], 'romfs.bin', 'romfs_ko.bin', 'c0')
         os.replace(W('romfs_ko.bin'), W('romfs.bin'))
 
-        log('5) 다시 묶기')
+        log('5) 프로그램 묶기')
         T.run('3dstool', ['-cvtf', 'cxi', 'ko0.ncch'] + cx + ['--not-encrypt'], 'ccxi')
         os.remove(W('romfs.bin'))
         built[0] = 'ko0.ncch'
+        cfa_keys = [k for k in spec['contents'] if k != '0']     # 본편 1 = 전자 설명서
+        if cfa_keys:
+            log('6) 전자 설명서')
     else:
         log('2) 추가 콘텐츠 대사')
-        for key in sorted(spec['contents'], key=int):
-            idx = int(key)
-            if idx not in present:
-                log('  콘텐츠 %d 없음, 건너뜀' % idx)
-                continue
-            n = 'c%d' % idx
-            T.run('3dstool', ['-xvtf', 'cfa', n + '.ncch', '--header', n + '_h.bin',
-                              '--romfs', n + '_r.bin'], 'x' + n)
-            os.remove(W(n + '.ncch'))
-            apply_romfs(T, W, payload, spec['contents'][key], n + '_r.bin', n + '_rk.bin', n)
-            T.run('3dstool', ['-cvtf', 'cfa', 'ko%d.ncch' % idx, '--header', n + '_h.bin',
-                              '--romfs', n + '_rk.bin', '--not-encrypt'], 'c' + n)
-            os.remove(W(n + '_rk.bin'))
-            built[idx] = 'ko%d.ncch' % idx
-        log('3) 다시 묶기')
+        cfa_keys = list(spec['contents'])
+    for key in sorted(cfa_keys, key=int):
+        idx = int(key)
+        if idx not in present:
+            log('  콘텐츠 %d 없음, 건너뜀' % idx)
+            continue
+        n = 'c%d' % idx
+        T.run('3dstool', ['-xvtf', 'cfa', n + '.ncch', '--header', n + '_h.bin',
+                          '--romfs', n + '_r.bin'], 'x' + n)
+        os.remove(W(n + '.ncch'))
+        apply_romfs(T, W, payload, spec['contents'][key], n + '_r.bin', n + '_rk.bin', n)
+        # --not-encrypt 를 빠뜨리면 원본 헤더의 '암호화됨' 플래그가 남는다
+        T.run('3dstool', ['-cvtf', 'cfa', 'ko%d.ncch' % idx, '--header', n + '_h.bin',
+                          '--romfs', n + '_rk.bin', '--not-encrypt'], 'c' + n)
+        os.remove(W(n + '_rk.bin'))
+        built[idx] = 'ko%d.ncch' % idx
+    log('다시 묶기')
 
     args = ['-f', 'cia', '-o', 'out.cia', '-ignoresign']
     for idx, cid, _e, _s, _o in info['records']:

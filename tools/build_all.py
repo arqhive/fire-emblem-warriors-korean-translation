@@ -37,7 +37,7 @@ def step(title, cmd):
 
 
 def orig(pattern):
-    hits = glob.glob(str(ROOT / pattern))
+    hits = glob.glob(glob.escape(str(ROOT)) + '/' + pattern)   # 폴더 이름의 [N3DS] 가 glob 패턴으로 읽히지 않게
     if not hits:
         raise SystemExit('원본 CIA 없음: %s' % pattern)
     return hits[0]
@@ -51,6 +51,7 @@ def main():
     step('UTF-16 훈장', ['tools/apply_medals.py', OUT])
     step('되읽어 대조', ['tools/verify_patch.py', OUT])
     step('DLC 대사', ['tools/patch_dlc.py', OUT, DLC])
+    step('전자 설명서 그림', ['tools/manual_patch.py', OUT + '/manual/Manual.bcma'])
 
     tmp = DESK / '_FEWarriors_tmp.cia'
     for tag, pat, final in (('base', '000400000F70C100*.cia', 'FEWarriors_KO_base.cia'),
@@ -61,7 +62,8 @@ def main():
               '--out', str(tmp), '--romfs-from', romfs])
         step('%s CIA — 코드 훅' % tag,
              ['tools/build_cia.py', '--tag', tag, '--cia', str(tmp),
-              '--out', str(DESK / final), '--code', '--no-home'])
+              '--out', str(DESK / final), '--code', '--no-home']
+             + (['--manual', OUT + '/manual/Manual.bcma'] if tag == 'base' else []))
         tmp.unlink()
     step('DLC CIA', ['tools/build_dlc_cia.py', '--cia', orig('0004008C0F70C100*.cia'),
                      '--out', str(DESK / 'FEWarriors_KO_DLC.cia')])

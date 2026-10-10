@@ -25,7 +25,7 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 AZ = Path(os.environ.get('APPDATA', '')) / 'Azahar' / 'sysdata'
 os.environ.setdefault('BOOT9_PATH', str(AZ / 'boot9.bin'))
-os.environ.setdefault('SEEDDB_PATH', str(ROOT / 'seeddb.bin'))
+os.environ.setdefault('SEEDDB_PATH', str(ROOT / 'seeddb.bin') if (ROOT / 'seeddb.bin').exists() else str(AZ / 'seeddb.bin'))
 sys.path.insert(0, str(HERE))
 from pyctr.type.cia import CIAReader
 from pyctr.type.ncch import NCCHSection
@@ -33,12 +33,12 @@ from hangul_font import make_patch
 
 DESK = Path(os.path.expandvars(r'%USERPROFILE%\Desktop'))
 XDELTA = HERE / 'bin' / 'xdelta3.exe'
-VERSION = 'v0.2'
+VERSION = 'v0.2.1'
 OUT = ROOT / 'release' / 'patcher' / 'payload'
 TMP = ROOT / 'work' / 'payload_tmp'
 
 JOBS = [
-    ('base', '000400000F70C100*.cia', DESK / 'FEWarriors_KO_base.cia', [0]),
+    ('base', '000400000F70C100*.cia', DESK / 'FEWarriors_KO_base.cia', [0, 1]),   # 1 = 전자 설명서
     ('update', '0004000E0F70C100*.cia', DESK / 'FEWarriors_KO_update.cia', [0]),
     ('dlc', '0004008C0F70C100*.cia', DESK / 'FEWarriors_KO_DLC.cia', [2, 3, 4]),
 ]
@@ -71,7 +71,7 @@ def main():
     manifest = {'version': version, 'titles': {}}
 
     for tag, pattern, built, indexes in JOBS:
-        orig = glob.glob(pattern)
+        orig = glob.glob(glob.escape(str(ROOT)) + '/' + pattern)
         if not orig or not built.exists():
             print('%s 건너뜀 (원본 또는 한글 CIA 없음)' % tag)
             continue

@@ -21,6 +21,7 @@ from linkdata import LinkData
 
 REUSE = Path('translation/graphics/reuse_manifest.json')
 NATIVE = Path('translation/graphics/native_manifest.json')
+GPT = Path('translation/graphics/gpt_manifest.json')       # GPT 재작업 그림(같은 자리보다 우선)
 
 
 def sha(b):
@@ -47,6 +48,19 @@ def collect():
                 id=e['id'], offset=t['payload_offset_in_resource'], length=t['length'],
                 before=t['before_payload_sha256'], payload=Path(e['payload_file']),
                 payload_sha=e['payload_sha256']))
+    # GPT 재작업 그림: 같은 자리를 덮는 reuse/native 항목을 빼고 대신 넣는다.
+    if GPT.exists():
+        for e in json.loads(GPT.read_text('utf-8'))['entries']:
+            if not e.get('patch_inclusion_allowed'):
+                continue
+            for t in e['targets']:
+                key = (t['tag'], str(t['resource_path']))
+                o, n = t['payload_offset_in_resource'], t['length']
+                jobs[key] = [it for it in jobs[key]
+                             if it['offset'] + it['length'] <= o or o + n <= it['offset']]
+                jobs[key].append(dict(
+                    id=e['id'], offset=o, length=n, before=t['before_payload_sha256'],
+                    payload=Path(e['payload_file']), payload_sha=e['payload_sha256']))
     return jobs
 
 
