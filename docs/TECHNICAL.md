@@ -119,6 +119,15 @@ XL 밖에 따로 있는, 길이 접두가 붙은 대사 레코드입니다. 두 
 CWAV 는 32바이트 정렬 위치에 옵니다. 재조립할 때 31개 CGFX 오프셋과 `0x84` 의 CWAV 오프셋을
 다시 계산해 넣습니다.
 
+## 전자 설명서
+
+본편 CIA 의 content 1 은 전자 설명서 CFA 이고, romfs 의 `Manual.bcma` 가 darc 입니다. 그림은 맨 끝 항목
+`JPN_ja_texture.arc`(LZ10 압축, 안쪽도 darc) 안의 BCLIM 입니다. BCLIM 은 데이터 뒤에 `CLIM`/`imag` 꼬리가
+붙고, 형식 7 = RGBA5551, 9 = RGBA8(바이트 순서 ABGR), Morton 순서, 뒤집기 없음, 저장 크기는 2의 거듭제곱까지
+늘립니다. `tools/manual_patch.py` 가 같은 크기로 다시 인코딩해 안쪽 darc 에서 제자리 교체 → LZ10 재압축 →
+겉 darc 의 마지막 항목만 갈아 끼우고 헤더의 파일 크기와 항목 크기를 고칩니다. 설명서 본문 글자(410문자열)는
+아직 바꾸지 않았습니다.
+
 ## 패치 방식
 
 산출물은 **CIA 재빌드**입니다. romfs 안의 `LINKDATA`와 ExeFS의 `.code`·배너·아이콘을 갈아 끼운 CIA를 만들어 설치합니다.
@@ -189,6 +198,7 @@ Azahar 로 실기와 같은 조건을 만들어 확인했습니다. 원본 CIA �
 | romfs | `LINKDATA.idx` | 대사 재배치로 옮긴 자원의 위치표 |
 | ExeFS | `.code` | 한글 코드 매핑 ARM 훅 88바이트 |
 | ExeFS | `banner`, `icon` | HOME 배너와 게임 이름 |
+| 본편 content 1 | `Manual.bcma` | 전자 설명서 그림 3장 |
 
 romfs 에서는 이 두 파일이 전부이고 `movie`·`sound`·`voice` 는 손대지 않습니다.
 

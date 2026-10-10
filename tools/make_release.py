@@ -5,8 +5,8 @@
   python tools/make_patcher.py [--python <임베디드 파이썬>]      # release/patcher·release/python 채우기
   python tools/make_release.py v0.1
 
-release/FEWarriors_KO_<버전>_Patcher.zip
-  FEWarriors_KO_<버전>_Patcher/패치하기.bat, patcher/, python/   일본판 CIA 를 한글판으로 만드는 패처
+release/CFMJ_KPatch_<버전>.zip
+  CFMJ_KPatch_<버전>/패치하기.bat, patcher/, python/   일본판 CIA 를 한글판으로 만드는 패처
   README_한국어.txt, LICENSE.txt
 
 이 게임은 LayeredFS 로 적용할 수 없어(docs/TECHNICAL.md) LayeredFS ZIP 은 만들지 않는다.
@@ -38,7 +38,7 @@ def main():
                  os.path.join('release', 'patcher', 'lib', 'fewpatch.py')):
         if not os.path.exists(need):
             sys.exit('패처가 준비되지 않았습니다(%s 없음). 먼저 python tools/make_patcher.py 를 실행하세요.' % need)
-    top = 'FEWarriors_KO_%s_Patcher' % ver
+    top = 'CFMJ_KPatch_%s' % ver
     out = os.path.join('release', top + '.zip')
     with zipfile.ZipFile(out, 'w', zipfile.ZIP_DEFLATED, compresslevel=9) as z:
         z.write(os.path.join('release', '패치하기.bat'), top + '/패치하기.bat')
