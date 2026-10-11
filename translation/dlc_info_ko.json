@@ -1,0 +1,8 @@
+{
+ "note": "DLC content 0 ContentInfoArchive_JPN_ja.bin 레코드 번호 → 한글 이름. 3DS 데이터 관리 화면의 추가 콘텐츠 이름. DLC1~3 은 원래 영어라 그대로 둔다.",
+ "source_sha256": "be6462b122b381957f3ce6822e10dc7a77ade56bffdcee743f068a0f23baf4e3",
+ "names": {
+  "1": "시즌 패스 특전",
+  "5": "영어 음성 팩"
+ }
+}

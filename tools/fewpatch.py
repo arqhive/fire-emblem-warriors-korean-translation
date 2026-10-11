@@ -368,7 +368,7 @@ def _patch(src, dst, payload, bindir, work, key_extra):
         if cfa_keys:
             log('6) 전자 설명서')
     else:
-        log('2) 추가 콘텐츠 대사')
+        log('2) 추가 콘텐츠 이름·대사')
         cfa_keys = list(spec['contents'])
     for key in sorted(cfa_keys, key=int):
         idx = int(key)
@@ -376,14 +376,27 @@ def _patch(src, dst, payload, bindir, work, key_extra):
             log('  콘텐츠 %d 없음, 건너뜀' % idx)
             continue
         n = 'c%d' % idx
+        item = spec['contents'][key]
+        exefs = ['--exefs', n + '_e.bin'] if 'exefs' in item else []   # DLC 0 = exefs(아이콘) + 정보 파일
         T.run('3dstool', ['-xvtf', 'cfa', n + '.ncch', '--header', n + '_h.bin',
-                          '--romfs', n + '_r.bin'], 'x' + n)
+                          '--romfs', n + '_r.bin'] + exefs, 'x' + n)
         os.remove(W(n + '.ncch'))
-        apply_romfs(T, W, payload, spec['contents'][key], n + '_r.bin', n + '_rk.bin', n)
+        apply_romfs(T, W, payload, item, n + '_r.bin', n + '_rk.bin', n)
+        if item.get('exefs'):                    # 바꿀 exefs 항목이 있을 때만 다시 쓴다
+            patches = {}
+            for name, it in item['exefs'].items():
+                body = open(os.path.join(payload, it['file']), 'rb').read()
+                if hashlib.sha256(body).hexdigest() != it['sha256']:
+                    raise SystemExit('패치 파일이 손상됐습니다: ' + it['file'])
+                patches[name] = body
+            ex = open(W(n + '_e.bin'), 'rb').read()
+            open(W(n + '_e.bin'), 'wb').write(rebuild_exefs(ex, patches))
         # --not-encrypt 를 빠뜨리면 원본 헤더의 '암호화됨' 플래그가 남는다
         T.run('3dstool', ['-cvtf', 'cfa', 'ko%d.ncch' % idx, '--header', n + '_h.bin',
-                          '--romfs', n + '_rk.bin', '--not-encrypt'], 'c' + n)
+                          '--romfs', n + '_rk.bin', '--not-encrypt'] + exefs, 'c' + n)
         os.remove(W(n + '_rk.bin'))
+        if exefs:
+            os.remove(W(n + '_e.bin'))
         built[idx] = 'ko%d.ncch' % idx
     log('다시 묶기')
 
