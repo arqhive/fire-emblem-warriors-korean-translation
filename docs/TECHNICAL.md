@@ -199,7 +199,7 @@ Azahar 로 실기와 같은 조건을 만들어 확인했습니다. 원본 CIA �
 | ExeFS | `.code` | 한글 코드 매핑 ARM 훅 88바이트 |
 | ExeFS | `banner`, `icon` | HOME 배너와 게임 이름 |
 | 본편 content 1 | `Manual.bcma` | 전자 설명서 그림 3장 |
-| DLC content 0 | `ContentInfoArchive_JPN_ja.bin` | 추가 콘텐츠 이름 2개(레코드 200바이트: 이름 0x40·설명 0x80 UTF-8 + u32 번호·플래그, `tools/dlc_info.py`). exefs 아이콘은 그대로 함께 다시 싼다 |
+| DLC content 0 | `ContentInfoArchive_JPN_ja.bin` | 추가 콘텐츠 이름 2개(레코드 200바이트: 이름 0x40·설명 0x80 UTF-8 + u32 번호·플래그, `tools/dlc_info.py`). exefs 아이콘(SMDH)은 본편 한글 아이콘의 제목 칸(일본어·영어·한국어)을 옮긴다. 한국판 본체는 한국어 칸을 읽는데 원본은 영어다 |
 
 romfs 에서는 이 두 파일이 전부이고 `movie`·`sound`·`voice` 는 손대지 않습니다.
 

@@ -33,14 +33,14 @@ from hangul_font import make_patch
 
 DESK = Path(os.path.expandvars(r'%USERPROFILE%\Desktop'))
 XDELTA = HERE / 'bin' / 'xdelta3.exe'
-VERSION = 'v0.2.2'
+VERSION = 'v0.2.3'
 OUT = ROOT / 'release' / 'patcher' / 'payload'
 TMP = ROOT / 'work' / 'payload_tmp'
 
 JOBS = [
     ('base', '000400000F70C100*.cia', DESK / 'FEWarriors_KO_base.cia', [0, 1]),   # 1 = 전자 설명서
     ('update', '0004000E0F70C100*.cia', DESK / 'FEWarriors_KO_update.cia', [0]),
-    ('dlc', '0004008C0F70C100*.cia', DESK / 'FEWarriors_KO_DLC.cia', [0, 2, 3, 4]),   # 0 = 추가 콘텐츠 이름
+    ('dlc', '0004008C0F70C100*.cia', DESK / 'FEWarriors_KO_DLC.cia', [0, 2, 3, 4]),   # 0 = 추가 콘텐츠 이름·아이콘
 ]
 
 
@@ -89,8 +89,9 @@ def main():
                 source_sha256=sha(a), result_sha256=sha(b),
                 source_size=a.stat().st_size, result_size=b.stat().st_size)
             print('   %s  %s 바이트' % (name, format((OUT / name).stat().st_size, ',')))
-            if tag == 'dlc' and idx == 0:                     # exefs 가 있는 CFA: 바꾸지 않고 함께 다시 싼다
-                entry['contents']['0']['exefs'] = {}
+            if tag == 'dlc' and idx == 0:                     # exefs 아이콘(제목 칸)
+                shutil.copyfile(ROOT / 'work' / 'home_menu' / 'dlc' / 'icon.bin', OUT / 'dlc_icon.bin')
+                entry['contents']['0']['exefs'] = {'icon': dict(file='dlc_icon.bin', sha256=sha(OUT / 'dlc_icon.bin'))}
             a.unlink(); b.unlink()
 
         if tag in ('base', 'update'):
