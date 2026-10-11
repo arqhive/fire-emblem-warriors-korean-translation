@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""DLC content 0(메타데이터)의 콘텐츠 정보 파일 한글판.
+"""DLC content 0(메타데이터)의 한글판: 콘텐츠 정보 파일과 아이콘 제목.
 
   python tools/dlc_info.py <ContentInfoArchive_JPN_ja.bin>     # 바꿀 내용만 보여 준다
 
@@ -8,7 +8,8 @@ ContentInfoArchive_JPN_ja.bin: 머리 8바이트(u32 판, u32 개수) 뒤에 200
   0번 레코드는 DummyTitle/DummyDescription 이다. 3DS 데이터 관리 화면의 추가 콘텐츠 이름이 여기서 나온다.
 번역은 translation/dlc_info_ko.json 에 레코드 번호 → 한글 이름으로 둔다(원문 없음).
 
-같은 content 0 의 exefs 아이콘(SMDH) 제목도 일본어지만 지금은 바꾸지 않는다.
+exefs 아이콘(SMDH)은 그림·설정이 본편과 같다. 본편 한글 아이콘(work/home_menu/base/icon.bin)의
+제목 칸(일본어·영어·한국어)을 그대로 옮긴다. 한국판 본체는 한국어 칸을 읽는데 원본은 영어다.
 """
 import hashlib
 import json
@@ -18,7 +19,9 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 TRANSLATION = ROOT / 'translation' / 'dlc_info_ko.json'
+BASE_ICON = ROOT / 'work' / 'home_menu' / 'base' / 'icon.bin'
 REC, NAME = 200, 0x40
+ICON_SLOTS = (0, 1, 7)          # SMDH 제목 칸: 일본어, 영어, 한국어
 
 
 def records(b):
@@ -42,6 +45,16 @@ def patch_info(b):
         if len(raw) >= NAME:
             raise SystemExit('이름이 너무 길다(%d바이트): %s' % (len(raw), new))
         out[o:o + NAME] = raw + b'\0' * (NAME - len(raw))
+    return bytes(out)
+
+
+def patch_icon(dlc_icon):
+    base = BASE_ICON.read_bytes()
+    assert dlc_icon[:4] == base[:4] == b'SMDH' and len(dlc_icon) == len(base)
+    out = bytearray(dlc_icon)
+    for k in ICON_SLOTS:
+        o = 8 + k * 0x200
+        out[o:o + 0x200] = base[o:o + 0x200]
     return bytes(out)
 
 

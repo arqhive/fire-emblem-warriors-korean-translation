@@ -7,7 +7,7 @@
 DLC(0004008C0F70C100)는 별도 타이틀이라 LayeredFS 로 덮을 수 없다. 콘텐츠마다 romfs 를
 풀어 LINKDATA 를 갈아 끼우고 다시 싼다.
 
-  content 0  메타데이터(CFA, exefs 아이콘 + romfs 정보 파일) — 정보 파일의 이름만 교체(tools/dlc_info.py), exefs 는 그대로
+  content 0  메타데이터(CFA, exefs 아이콘 + romfs 정보 파일) — 이름·아이콘 제목 교체(tools/dlc_info.py)
   content 1  c1 LINKDATA — 번역 대상 아님, 그대로
   content 2  c2 — 교체
   content 3  c3 — 교체
@@ -40,6 +40,7 @@ from pyctr.type.cia import CIAReader
 from pyctr.type.ncch import NCCHSection
 sys.path.insert(0, str(HERE))
 import dlc_info
+from fewpatch import read_exefs, rebuild_exefs
 
 
 def run(cmd, log):
@@ -98,17 +99,23 @@ def main():
                 shutil.copyfileobj(f, o, 1 << 24)
 
     built = {}
-    # content 0: 추가 콘텐츠 이름(ContentInfoArchive). exefs(아이콘)는 그대로 다시 싼다
-    print('콘텐츠 0 (메타데이터) 이름 교체', flush=True)
+    # content 0: 추가 콘텐츠 이름(ContentInfoArchive)과 아이콘 제목
+    print('콘텐츠 0 (메타데이터) 이름·아이콘 교체', flush=True)
     n0 = P('c0.ncch')
     run([tool('3dstool'), '-xvtf', 'cfa', n0, '--header', P('c0_header.bin'),
          '--exefs', P('c0_exefs.bin'), '--romfs', P('c0_romfs.bin')], L('x_cfa_0'))
     run([tool('3dstool'), '-xvtf', 'romfs', P('c0_romfs.bin'), '--romfs-dir', P('c0_romfs')], L('x_romfs_0'))
+    ex = Path(P('c0_exefs.bin')).read_bytes()
+    icon_ko = dlc_info.patch_icon(read_exefs(ex)['icon'])
+    Path(P('c0_exefs_ko.bin')).write_bytes(rebuild_exefs(ex, {'icon': icon_ko}))   # 패처와 같은 함수
+    keep = ROOT / 'work' / 'home_menu' / 'dlc'
+    keep.mkdir(parents=True, exist_ok=True)
+    (keep / 'icon.bin').write_bytes(icon_ko)               # make_payload 가 배포 차분에 넣는다
     info = Path(P('c0_romfs')) / 'ContentInfoArchive_JPN_ja.bin'
     info.write_bytes(dlc_info.patch_info(info.read_bytes()))
     run([tool('3dstool'), '-cvtf', 'romfs', P('c0_romfs_ko.bin'), '--romfs-dir', P('c0_romfs')], L('c_romfs_0'))
     run([tool('3dstool'), '-cvtf', 'cfa', P('c0_ko.ncch'), '--header', P('c0_header.bin'),
-         '--exefs', P('c0_exefs.bin'), '--romfs', P('c0_romfs_ko.bin'), '--not-encrypt'], L('c_cfa_0'))
+         '--exefs', P('c0_exefs_ko.bin'), '--romfs', P('c0_romfs_ko.bin'), '--not-encrypt'], L('c_cfa_0'))
     built[0] = P('c0_ko.ncch')
     for idx, tag in CONTENT_TAG.items():
         print('콘텐츠 %d (%s) romfs 교체' % (idx, tag), flush=True)
