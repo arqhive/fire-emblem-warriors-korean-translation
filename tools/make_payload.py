@@ -23,10 +23,9 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
-AZ = Path(os.environ.get('APPDATA', '')) / 'Azahar' / 'sysdata'
-os.environ.setdefault('BOOT9_PATH', str(AZ / 'boot9.bin'))
-os.environ.setdefault('SEEDDB_PATH', str(ROOT / 'seeddb.bin') if (ROOT / 'seeddb.bin').exists() else str(AZ / 'seeddb.bin'))
 sys.path.insert(0, str(HERE))
+import keys
+keys.setup()                     # boot9·seeddb: 프로젝트 → 상위 폴더(공용) → Azahar sysdata
 from pyctr.type.cia import CIAReader
 from pyctr.type.ncch import NCCHSection
 from hangul_font import make_patch

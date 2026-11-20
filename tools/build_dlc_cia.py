@@ -30,15 +30,11 @@ ROOT = HERE.parent
 TID = '0004008c0f70c100'
 CONTENT_TAG = {2: 'c2', 3: 'c3', 4: 'c4'}
 
-sysdata = Path(os.environ.get('APPDATA', '')) / 'Azahar' / 'sysdata'
-for var, name in (('BOOT9_PATH', 'boot9.bin'), ('SEEDDB_PATH', 'seeddb.bin')):
-    if var not in os.environ and (sysdata / name).exists():
-        os.environ[var] = str(sysdata / name)
-if 'SEEDDB_PATH' not in os.environ and (ROOT / 'seeddb.bin').exists():
-    os.environ['SEEDDB_PATH'] = str(ROOT / 'seeddb.bin')
+sys.path.insert(0, str(HERE))
+import keys
+keys.setup()                     # boot9·seeddb: 프로젝트 → 상위 폴더(공용) → Azahar sysdata
 from pyctr.type.cia import CIAReader
 from pyctr.type.ncch import NCCHSection
-sys.path.insert(0, str(HERE))
 import dlc_info
 from fewpatch import read_exefs, rebuild_exefs
 

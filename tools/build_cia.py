@@ -29,12 +29,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)
 TID = {'base': '000400000f70c100', 'update': '0004000e0f70c100'}
 
-sysdata = os.path.join(os.environ.get('APPDATA', ''), 'Azahar', 'sysdata')
-for var, name in (('BOOT9_PATH', 'boot9.bin'), ('SEEDDB_PATH', 'seeddb.bin')):
-    if var not in os.environ and os.path.exists(os.path.join(sysdata, name)):
-        os.environ[var] = os.path.join(sysdata, name)
-if 'SEEDDB_PATH' not in os.environ and os.path.exists(os.path.join(ROOT, 'seeddb.bin')):
-    os.environ['SEEDDB_PATH'] = os.path.join(ROOT, 'seeddb.bin')
+sys.path.insert(0, HERE)
+import keys
+keys.setup()                     # boot9·seeddb: 프로젝트 → 상위 폴더(공용) → Azahar sysdata
 from pyctr.type.cia import CIAReader
 from pyctr.type.ncch import NCCHSection
 
